@@ -2,6 +2,7 @@ require 'aggcat/version'
 require 'aggcat/configurable'
 require 'aggcat/base'
 require 'aggcat/client'
+require 'aggcat/batch'
 
 module Aggcat
   class << self
@@ -18,6 +19,10 @@ module Aggcat
     def client
       raise ArgumentError.new('set the client scope first by calling Aggcat.scope(customer_id)') unless defined?(@customer_id)
       @client
+    end
+    
+    def batch
+      @batch = Aggcat::Batch.new(options)
     end
 
     private

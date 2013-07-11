@@ -47,7 +47,12 @@ module Aggcat
     def oauth_token(force=false)
       now = Time.now
       if force || @oauth_token.nil? || @oauth_token_expire_at <= now
-        @oauth_token = new_token(saml_message(@customer_id))
+        @oauth_token = case self
+        when ::Aggcat::Batch
+          new_token(saml_message(@batch_id))
+        when ::Aggcat::Client
+          new_token(saml_message(@customer_id))
+        end
         @oauth_token_expire_at = now + 9 * 60 # 9 minutes
       end
       @oauth_token
