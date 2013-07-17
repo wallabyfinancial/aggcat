@@ -22,6 +22,12 @@ module Aggcat
       get("/export/files/#{filename}")
     end
     
+    # This is a "soft" delete so the file will remain for housekeeping but will not display in the listFiles API call.
+    def delete_file(filename)
+      validate(filename: filename)
+      delete("/export/files/#{filename}")
+    end
+    
     protected
 
     def get(path, headers = {})

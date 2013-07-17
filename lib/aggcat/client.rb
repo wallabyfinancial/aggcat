@@ -68,6 +68,11 @@ module Aggcat
       headers = {'challengeSessionId' => challenge_session_id, 'challengeNodeId' => challenge_node_id}
       put("/logins/#{login_id}?refresh=true", challenge_answers(answers), headers)
     end
+    
+    def update_refresh_login(login_id)
+      validate(login_id: login_id)
+      put("/logins/#{login_id}?refresh=true", blank_credentials)
+    end
 
     def update_account_type(account_id, type)
       validate(account_id: account_id, type: type)
@@ -131,6 +136,11 @@ module Aggcat
           raise ArgumentError.new("#{name} is required")
         end
       end
+    end
+    
+    def blank_credentials
+      xml = Builder::XmlMarkup.new
+      xml.InstitutionLogin('xmlns' => LOGIN_NAMESPACE)
     end
 
     def credentials(institution_id, login_credentials)
