@@ -3,6 +3,7 @@ require 'aggcat/configurable'
 require 'aggcat/base'
 require 'aggcat/client'
 require 'aggcat/batch'
+require 'aggcat/graft'
 
 module Aggcat
   class << self
@@ -23,6 +24,14 @@ module Aggcat
     
     def batch
       @batch = Aggcat::Batch.new(options)
+    end
+    
+    def graft(customer_id)
+      if !defined?(@customer_id) || @customer_id != customer_id
+        @customer_id = customer_id
+        @graft = Aggcat::Graft.new(options.merge({customer_id: customer_id}))
+      end
+      @graft
     end
 
     private

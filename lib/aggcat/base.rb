@@ -15,17 +15,18 @@ module Aggcat
 
     SAML_URL = 'https://oauth.intuit.com/oauth/v1/get_access_token_by_saml'
 
-    LOGIN_NAMESPACE = 'http://schema.intuit.com/platform/fdatafeed/institutionlogin/v1'
-    CHALLENGE_NAMESPACE = 'http://schema.intuit.com/platform/fdatafeed/challenge/v1'
-    BANKING_ACCOUNT_NAMESPACE = 'http://schema.intuit.com/platform/fdatafeed/bankingaccount/v1'
-    CREDIT_ACCOUNT_NAMESPACE = 'http://schema.intuit.com/platform/fdatafeed/creditaccount/v1'
-    LOAN_NAMESPACE = 'http://schema.intuit.com/platform/fdatafeed/loan/v1'
+    LOGIN_NAMESPACE              = 'http://schema.intuit.com/platform/fdatafeed/institutionlogin/v1'
+    CHALLENGE_NAMESPACE          = 'http://schema.intuit.com/platform/fdatafeed/challenge/v1'
+    BANKING_ACCOUNT_NAMESPACE    = 'http://schema.intuit.com/platform/fdatafeed/bankingaccount/v1'
+    CREDIT_ACCOUNT_NAMESPACE     = 'http://schema.intuit.com/platform/fdatafeed/creditaccount/v1'
+    LOAN_NAMESPACE               = 'http://schema.intuit.com/platform/fdatafeed/loan/v1'
     INVESTMENT_ACCOUNT_NAMESPACE = 'http://schema.intuit.com/platform/fdatafeed/investmentaccount/v1'
-    REWARD_ACCOUNT_NAMESPACE = 'http://schema.intuit.com/platform/fdatafeed/rewardsaccount/v1'
+    REWARD_ACCOUNT_NAMESPACE     = 'http://schema.intuit.com/platform/fdatafeed/rewardsaccount/v1'
+    GRAFT_NAMESPACE              = 'http://schema.intuit.com/platform/fdatafeed/graft/v1'
 
-    BANKING_TYPES = Set.new %w(CHECKING SAVINGS MONEYMRKT RECURRINGDEPOSIT CD CASHMANAGEMENT OVERDRAFT)
-    CREDIT_TYPES = Set.new %w(CREDITCARD LINEOFCREDIT OTHER)
-    LOAN_TYPES = Set.new %w(LOAN AUTO COMMERCIAL CONSTR CONSUMER HOMEEQUITY MILITARY MORTGAGE SMB STUDENT)
+    BANKING_TYPES    = Set.new %w(CHECKING SAVINGS MONEYMRKT RECURRINGDEPOSIT CD CASHMANAGEMENT OVERDRAFT)
+    CREDIT_TYPES     = Set.new %w(CREDITCARD LINEOFCREDIT OTHER)
+    LOAN_TYPES       = Set.new %w(LOAN AUTO COMMERCIAL CONSTR CONSUMER HOMEEQUITY MILITARY MORTGAGE SMB STUDENT)
     INVESTMENT_TYPES = Set.new %w(TAXABLE 401K BROKERAGE IRA 403B KEOGH TRUST TDA SIMPLE NORMAL SARSEP UGMA OTHER)
 
     TIME_FORMAT = '%Y-%m-%dT%T.%LZ'
