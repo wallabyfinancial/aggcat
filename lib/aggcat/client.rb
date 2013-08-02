@@ -85,6 +85,12 @@ module Aggcat
     end
 
     def delete_customer
+      ## Redundant
+      # if accounts[:result][:account_list]
+      #   accounts[:result][:account_list].values.flatten.each do |account|
+      #     delete_account(account[:account_id])
+      #   end
+      # end
       result = delete('/customers')
       if result[:status_code] == '200'
         @oauth_token = nil
