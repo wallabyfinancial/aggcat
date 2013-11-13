@@ -27,11 +27,8 @@ module Aggcat
     end
     
     def graft(customer_id)
-      if !defined?(@customer_id) || @customer_id != customer_id
-        @customer_id = customer_id
-        @graft = Aggcat::Graft.new(options.merge({customer_id: customer_id}))
-      end
-      @graft
+      @customer_id = customer_id
+      @graft = Aggcat::Graft.new(options.merge({customer_id: customer_id}))
     end
 
     private
