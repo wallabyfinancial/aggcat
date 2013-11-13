@@ -51,6 +51,11 @@ module Aggcat
       end
       get(path)
     end
+    
+    def login_accounts(login_id)
+      validate(login_id: login_id)
+      get("/logins/#{login_id}/accounts")
+    end
 
     def login_accounts(login_id)
       validate(login_id: login_id)
